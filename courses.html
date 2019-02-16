@@ -174,7 +174,6 @@
             color: #fff;
         }
     </style>
-
 </head>
 <body>
 <!--Login dialog modal-->
@@ -352,7 +351,7 @@
                         <div class="wrap">
                             <div class="desc">
                                 <span class="teacher">特级教师 宋老师</span>
-                                <h3><a href="#">小学一年级语文（人教版）</a></h3>
+                                <h3><a href="course1.html">小学一年级语文（人教版）</a></h3>
                             </div>
                             <div class="pricing">
                                 <p><span class="price">¥2000</span> <span class="price old-price">¥3500</span> <span
@@ -384,7 +383,7 @@
                         <div class="wrap">
                             <div class="desc">
                                 <span class="teacher">特级教师 王老师</span>
-                                <h3><a href="#">中国历史讲解 古代史 少年班</a></h3>
+                                <h3><a href="course1.html">中国历史讲解 古代史 少年班</a></h3>
                             </div>
                             <div class="pricing">
                                 <p><span class="price">¥2000</span> <span class="price old-price">¥3500</span> <span
@@ -400,7 +399,7 @@
                         <div class="wrap">
                             <div class="desc">
                                 <span class="teacher">特级教师 张老师</span>
-                                <h3><a href="#">中国地理 北京 少年班</a></h3>
+                                <h3><a href="course1.html">中国地理 北京 少年班</a></h3>
                             </div>
                             <div class="pricing">
                                 <p><span class="price">¥1500</span> <span class="price old-price">¥3000</span> <span
@@ -416,7 +415,7 @@
                         <div class="wrap">
                             <div class="desc">
                                 <span class="teacher">特级教师 宋老师</span>
-                                <h3><a href="#">小学三年级语文（人教版）</a></h3>
+                                <h3><a href="course1.html">小学三年级语文（人教版）</a></h3>
                             </div>
                             <div class="pricing">
                                 <p><span class="price">¥2000</span> <span class="price old-price">¥3500</span> <span
@@ -432,7 +431,7 @@
                         <div class="wrap">
                             <div class="desc">
                                 <span class="teacher">特级教师 李老师</span>
-                                <h3><a href="#">小学四年级数学 （北师大版）</a></h3>
+                                <h3><a href="course1.html">小学四年级数学 （北师大版）</a></h3>
                             </div>
                             <div class="pricing">
                                 <p><span class="price">¥2000</span> <span class="price old-price">¥3500</span> <span
@@ -569,7 +568,7 @@
 <script src="js/main.js"></script>
 
 <script>
-    $(document).ready(function(){
+    $(document).ready(function () {
         if (window.localStorage.getItem("email") != null) {
             $("#displayName").css({display: "block"});
             $("#displayName").text(window.localStorage.getItem("email"));
@@ -578,11 +577,11 @@
             $('body').attr("style", "overflow:auto")
         }
 
-        $("#loginForm").submit(function(e) {
+        $("#loginForm").submit(function (e) {
             e.preventDefault();
         });
 
-        $("#loginBtn").click(function(){
+        $("#loginBtn").click(function () {
             window.localStorage.setItem("email", $("#userName").val());
             $('#login-modal').modal().hide();
             $("#displayName").css({display: "block"});
@@ -592,7 +591,7 @@
             $('body').attr("style", "overflow:auto")
         });
 
-        $("#logoutBtn").click(function(){
+        $("#logoutBtn").click(function () {
             window.localStorage.removeItem("email");
             $("#displayName").css({display: "none"});
             $("#displayName").text("");

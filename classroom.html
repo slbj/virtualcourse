@@ -70,10 +70,149 @@
         .top-buffer {
             margin-top: 100px;
         }
+
+        /*Result*/
+        /*EDIT ON*/
+        /*@import url(https://fonts.googleapis.com/css?family=Roboto);*/
+
+        /****** LOGIN MODAL ******/
+        .loginmodal-container {
+            padding: 30px;
+            max-width: 350px;
+            width: 100% !important;
+            background-color: #F7F7F7;
+            margin: 0 auto;
+            border-radius: 2px;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+            font-family: roboto;
+        }
+
+        .loginmodal-container h1 {
+            text-align: center;
+            font-size: 1.8em;
+            font-family: roboto;
+        }
+
+        .loginmodal-container input[type=submit] {
+            width: 100%;
+            display: block;
+            margin-bottom: 10px;
+            position: relative;
+        }
+
+        .loginmodal-container input[type=text], input[type=password] {
+            height: 44px;
+            font-size: 16px;
+            width: 100%;
+            margin-bottom: 10px;
+            -webkit-appearance: none;
+            background: #fff;
+            border: 1px solid #d9d9d9;
+            border-top: 1px solid #c0c0c0;
+            /* border-radius: 2px; */
+            padding: 0 8px;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+        }
+
+        .loginmodal-container input[type=text]:hover, input[type=password]:hover {
+            border: 1px solid #b9b9b9;
+            border-top: 1px solid #a0a0a0;
+            -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+            -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .loginmodal {
+            text-align: center;
+            font-size: 14px;
+            font-family: 'Arial', sans-serif;
+            font-weight: 700;
+            height: 36px;
+            padding: 0 8px;
+            /* border-radius: 3px; */
+            /* -webkit-user-select: none;
+              user-select: none; */
+        }
+
+        .loginmodal-submit {
+            /* border: 1px solid #3079ed; */
+            border: 0px;
+            color: #fff;
+            text-shadow: 0 1px rgba(0, 0, 0, 0.1);
+            background-color: #4d90fe;
+            padding: 17px 0px;
+            font-family: roboto;
+            font-size: 14px;
+            /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
+        }
+
+        .loginmodal-submit:hover {
+            /* border: 1px solid #2f5bb7; */
+            border: 0px;
+            text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+            background-color: #357ae8;
+            /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
+        }
+
+        .loginmodal-container a {
+            text-decoration: none;
+            color: #666;
+            font-weight: 400;
+            text-align: center;
+            display: inline-block;
+            opacity: 0.6;
+            transition: opacity ease 0.5s;
+        }
+
+        .login-help {
+            font-size: 12px;
+        }
+
+        .login-btn {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .button {
+            line-height: 55px;
+            padding: 0 30px;
+            background: #004a80;
+            color: #fff;
+            display: inline-block;
+            font-family: roboto;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .button:hover,
+        .button:visited {
+            background: #006cba;
+            color: #fff;
+        }
     </style>
 
 </head>
 <body>
+<!--Login dialog modal-->
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="loginmodal-container">
+            <h1>用 户 登 录</h1><br>
+            <form id="loginForm">
+                <input type="text" id="userName" name="user" placeholder="用户名">
+                <input type="password" id="password" name="pass" placeholder="密码">
+                <input type="submit" id="loginBtn" name="login" class="login loginmodal-submit" value="登录">
+            </form>
+
+            <div class="login-help">
+                <a href="#">注册</a> - <a href="#">忘记密码？</a>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="colorlib-loader"></div>
 
@@ -86,7 +225,16 @@
                         <p>从绝望中寻找希望，人生终将辉煌</p>
                     </div>
                     <div class="col-xs-6 col-md-push-2 text-right">
-                        <p class="btn-apply"><a href="#">愿景</a> <a href="#">任务</a> <a href="#">登录</a></p>
+                        <p class="btn-apply">
+                            <a href="#" id="openLoginBtn" data-toggle="modal" data-target="#login-modal"
+                               data-backdrop="false">登录</a>
+                        </p>
+                        <p>
+                            <a href="#" id="displayName" style="display: none;"></a>
+                        </p>
+                        <p>
+                            <a href="index.html" id="logoutBtn" style="display: none;">退出</a>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -283,6 +431,40 @@
 <script src="js/jquery.countTo.js"></script>
 <!-- Main -->
 <script src="js/main.js"></script>
+
+<script>
+    $(document).ready(function () {
+        if (window.localStorage.getItem("email") != null) {
+            $("#displayName").css({display: "block"});
+            $("#displayName").text(window.localStorage.getItem("email"));
+            $("#openLoginBtn").css({display: "none"});
+            $("#logoutBtn").css({display: "block"});
+            $('body').attr("style", "overflow:auto")
+        }
+
+        $("#loginForm").submit(function (e) {
+            e.preventDefault();
+        });
+
+        $("#loginBtn").click(function () {
+            window.localStorage.setItem("email", $("#userName").val());
+            $('#login-modal').modal().hide();
+            $("#displayName").css({display: "block"});
+            $("#displayName").text(window.localStorage.getItem("email"));
+            $("#openLoginBtn").css({display: "none"});
+            $("#logoutBtn").css({display: "block"});
+            $('body').attr("style", "overflow:auto")
+        });
+
+        $("#logoutBtn").click(function () {
+            window.localStorage.removeItem("email");
+            $("#displayName").css({display: "none"});
+            $("#displayName").text("");
+            $("#openLoginBtn").css({display: "block"});
+            $("#logoutBtn").css({display: "none"});
+        });
+    });
+</script>
 
 </body>
 </html>
