@@ -661,9 +661,10 @@
 
 <script>
     $(document).ready(function () {
-        if (window.localStorage.getItem("email") != null) {
+        var displayName = window.localStorage.getItem("displayName");
+        if (displayName != null) {
             $("#displayName").css({display: "block"});
-            $("#displayName").text(window.localStorage.getItem("email"));
+            $("#displayName").text(displayName);
             $("#openLoginBtn").css({display: "none"});
             $("#logoutBtn").css({display: "block"});
             $('body').attr("style", "overflow:auto")
@@ -701,6 +702,7 @@
 
         $("#logoutBtn").click(function () {
             window.localStorage.removeItem("email");
+            window.localStorage.removeItem("displayName");
             $("#displayName").css({display: "none"});
             $("#displayName").text("");
             $("#openLoginBtn").css({display: "block"});
