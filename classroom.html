@@ -543,7 +543,7 @@
             var userName = $('#userName').val();
             var password = $('#password').val();
             $.ajax({
-                url: 'http://localhost:8080/rtc/identity/login/pwd/user',
+                url: 'http://localhost:8080/identity/login/pwd/user',
                 contentType: "application/json; charset=utf-8",
                 type: 'POST',
                 crossDomain : true,
@@ -585,7 +585,7 @@
             var firstName = $('#signup_firstName').val();
             var displayName = $('#signup_displayName').val();
             $.ajax({
-                url: 'http://localhost:8080/rtc/identity/signup/pwd/user',
+                url: 'http://localhost:8080/identity/signup/pwd/user',
                 contentType: "application/json; charset=utf-8",
                 type: 'POST',
                 crossDomain : true,
