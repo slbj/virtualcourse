@@ -241,6 +241,26 @@
             background-color: #357ae8;
             /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
         }
+
+        .modal-header {
+            border: 0;
+            position: relative;
+        }
+
+        .close {
+            margin: 0;
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 23px;
+            height: 23px;
+            border-radius: 23px;
+            background-color: black;
+            color: black;
+            font-size: 19px;
+            opacity: 1;
+            z-index: 10;
+        }
     </style>
 
 </head>
@@ -250,11 +270,15 @@
      aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
         <div class="loginmodal-container">
-            <h1>用 户 登 录</h1><br>
+            <!-- header -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3 class="modal-title text-center">用 户 登 录</h3>
+            </div>
             <form id="loginForm">
                 <input type="text" id="userName" name="user" placeholder="用户名">
                 <input type="password" id="password" name="pass" placeholder="密码">
-                <input type="submit" id="loginBtn" name="login" class="login loginmodal-submit" value="登录">
+                <input type="submit" id="loginBtn" name="login" class="button" value="登 录">
             </form>
             <div class="login-info" style="display: none;">
                 <h4 color="red">用户名或密码错误！</h4>
@@ -272,14 +296,17 @@
      aria-hidden="true" style="display: none;">
     <div class="modal-dialog">
         <div class="signupmodal-container">
-            <h1>用 户 注 册</h1><br>
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3 class="modal-title text-center">用 户 注 册</h3>
+            </div>
             <form id="signupForm">
                 <input type="text" id="signup_email" name="email" placeholder="用户名（电子邮箱）">
                 <input type="password" id="signup_password" name="password" placeholder="密码">
                 <input type="text" id="signup_lastName" name="lastName" placeholder="姓">
                 <input type="text" id="signup_firstName" name="firstName" placeholder="名">
                 <input type="text" id="signup_displayName" name="displayName" placeholder="显示名字">
-                <input type="button" id="signupBtn" name="signup" class="button" value="注册">
+                <input type="submit" id="signupBtn" name="signup" class="button" value="注 册">
             </form>
             <div class="signup-info" style="display: none;">
                 <h4 color="red">注册失败！</h4>
@@ -667,6 +694,7 @@
         });
 
         $("#openSignupBtn").click(function () {
+            $('#loginForm').trigger("reset");
             $("#login-modal").css({display: "none"});
         });
 
@@ -697,6 +725,18 @@
                     $(".signup-info").css({display: "block"});
                 }
             });
+        });
+
+        $("#signupForm").submit(function (e) {
+            e.preventDefault();
+        });
+
+        $("#login-modal .close").click(function () {
+            $('#loginForm').trigger("reset");
+        });
+
+        $("#signup-modal .close").click(function () {
+            $('#signupForm').trigger("reset");
         });
     });
 </script>
