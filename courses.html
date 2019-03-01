@@ -45,338 +45,21 @@
     <!-- Theme style  -->
     <link rel="stylesheet" href="css/style.css">
 
+    <!-- Navigation style  -->
+    <link rel="stylesheet" href="css/navigation.css">
+
     <!-- Modernizr JS -->
     <script src="js/modernizr-2.6.2.min.js"></script>
     <!-- FOR IE9 below -->
     <!--[if lt IE 9]>
     <script src="js/respond.min.js"></script>
     <![endif]-->
-
-    <style>
-        /*Result*/
-        /*EDIT ON*/
-        /*@import url(https://fonts.googleapis.com/css?family=Roboto);*/
-
-        /****** LOGIN MODAL ******/
-        .loginmodal-container {
-            padding: 30px;
-            max-width: 350px;
-            width: 100% !important;
-            background-color: #F7F7F7;
-            margin: 0 auto;
-            border-radius: 2px;
-            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
-            font-family: roboto;
-        }
-
-        .loginmodal-container h1 {
-            text-align: center;
-            font-size: 1.8em;
-            font-family: roboto;
-        }
-
-        .loginmodal-container input[type=submit] {
-            width: 100%;
-            display: block;
-            margin-bottom: 10px;
-            position: relative;
-        }
-
-        .loginmodal-container input[type=text], input[type=password] {
-            height: 44px;
-            font-size: 16px;
-            width: 100%;
-            margin-bottom: 10px;
-            -webkit-appearance: none;
-            background: #fff;
-            border: 1px solid #d9d9d9;
-            border-top: 1px solid #c0c0c0;
-            /* border-radius: 2px; */
-            padding: 0 8px;
-            box-sizing: border-box;
-            -moz-box-sizing: border-box;
-        }
-
-        .loginmodal-container input[type=text]:hover, input[type=password]:hover {
-            border: 1px solid #b9b9b9;
-            border-top: 1px solid #a0a0a0;
-            -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-            -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-        }
-
-        .loginmodal {
-            text-align: center;
-            font-size: 14px;
-            font-family: 'Arial', sans-serif;
-            font-weight: 700;
-            height: 36px;
-            padding: 0 8px;
-            /* border-radius: 3px; */
-            /* -webkit-user-select: none;
-              user-select: none; */
-        }
-
-        .loginmodal-submit {
-            /* border: 1px solid #3079ed; */
-            border: 0px;
-            color: #fff;
-            text-shadow: 0 1px rgba(0, 0, 0, 0.1);
-            background-color: #4d90fe;
-            padding: 17px 0px;
-            font-family: roboto;
-            font-size: 14px;
-            /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
-        }
-
-        .loginmodal-submit:hover {
-            /* border: 1px solid #2f5bb7; */
-            border: 0px;
-            text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-            background-color: #357ae8;
-            /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
-        }
-
-        .loginmodal-container a {
-            text-decoration: none;
-            color: #666;
-            font-weight: 400;
-            text-align: center;
-            display: inline-block;
-            opacity: 0.6;
-            transition: opacity ease 0.5s;
-        }
-
-        .login-help {
-            font-size: 12px;
-        }
-
-        .login-btn {
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        .button {
-            line-height: 55px;
-            padding: 0 30px;
-            background: #004a80;
-            color: #fff;
-            display: inline-block;
-            font-family: roboto;
-            text-decoration: none;
-            font-size: 18px;
-        }
-
-        .button:hover,
-        .button:visited {
-            background: #006cba;
-            color: #fff;
-        }
-
-        .signupmodal-container {
-            padding: 30px;
-            max-width: 350px;
-            width: 100% !important;
-            background-color: #F7F7F7;
-            margin: 0 auto;
-            border-radius: 2px;
-            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
-            font-family: roboto;
-        }
-
-        .signupmodal-container h1 {
-            text-align: center;
-            font-size: 1.8em;
-            font-family: roboto;
-        }
-
-        .signupmodal-container input[type=submit] {
-            width: 100%;
-            display: block;
-            margin-bottom: 10px;
-            position: relative;
-        }
-
-        .signupmodal-container input[type=text], input[type=password] {
-            height: 44px;
-            font-size: 16px;
-            width: 100%;
-            margin-bottom: 10px;
-            -webkit-appearance: none;
-            background: #fff;
-            border: 1px solid #d9d9d9;
-            border-top: 1px solid #c0c0c0;
-            /* border-radius: 2px; */
-            padding: 0 8px;
-            box-sizing: border-box;
-            -moz-box-sizing: border-box;
-        }
-
-        .signupmodal-container input[type=text]:hover, input[type=password]:hover {
-            border: 1px solid #b9b9b9;
-            border-top: 1px solid #a0a0a0;
-            -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-            -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-            box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
-        }
-
-        .signupmodal-submit {
-            /* border: 1px solid #3079ed; */
-            border: 0px;
-            color: #fff;
-            text-shadow: 0 1px rgba(0, 0, 0, 0.1);
-            background-color: #4d90fe;
-            padding: 17px 0px;
-            font-family: roboto;
-            font-size: 14px;
-            /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#4787ed)); */
-        }
-
-        .signupmodal-submit:hover {
-            /* border: 1px solid #2f5bb7; */
-            border: 0px;
-            text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-            background-color: #357ae8;
-            /* background-image: -webkit-gradient(linear, 0 0, 0 100%,   from(#4d90fe), to(#357ae8)); */
-        }
-
-        .modal-header {
-            border: 0;
-            position: relative;
-        }
-
-        .close {
-            margin: 0;
-            position: absolute;
-            top: -20px;
-            right: -20px;
-            width: 23px;
-            height: 23px;
-            border-radius: 23px;
-            background-color: black;
-            color: black;
-            font-size: 19px;
-            opacity: 1;
-            z-index: 10;
-        }
-    </style>
 </head>
 <body>
-<!--Login dialog modal-->
-<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-     aria-hidden="true" style="display: none;">
-    <div class="modal-dialog">
-        <div class="loginmodal-container">
-            <!-- header -->
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h3 class="modal-title text-center">用 户 登 录</h3>
-            </div>
-            <form id="loginForm">
-                <input type="text" id="userName" name="user" placeholder="用户名">
-                <input type="password" id="password" name="pass" placeholder="密码">
-                <input type="submit" id="loginBtn" name="login" class="button" value="登 录">
-            </form>
-            <div class="login-info" style="display: none;">
-                <h4 color="red">用户名或密码错误！</h4>
-            </div>
-            <div class="login-help">
-                <a href="#" id="openSignupBtn" data-toggle="modal" data-target="#signup-modal"
-                   data-backdrop="false">注册</a> - <a href="#">忘记密码？</a>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!--Signup dialog modal-->
-<div class="modal fade" id="signup-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-     aria-hidden="true" style="display: none;">
-    <div class="modal-dialog">
-        <div class="signupmodal-container">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h3 class="modal-title text-center">用 户 注 册</h3>
-            </div>
-            <form id="signupForm">
-                <input type="text" id="signup_email" name="email" placeholder="用户名（电子邮箱）">
-                <input type="password" id="signup_password" name="password" placeholder="密码">
-                <input type="text" id="signup_lastName" name="lastName" placeholder="姓">
-                <input type="text" id="signup_firstName" name="firstName" placeholder="名">
-                <input type="text" id="signup_displayName" name="displayName" placeholder="显示名字">
-                <input type="submit" id="signupBtn" name="signup" class="button" value="注 册">
-            </form>
-            <div class="signup-info" style="display: none;">
-                <h4 color="red">注册失败！</h4>
-            </div>
-        </div>
-    </div>
-</div>
-
 <div class="colorlib-loader"></div>
 
 <div id="page">
-    <nav class="colorlib-nav" role="navigation">
-        <div class="upper-menu">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-4">
-                        <p>从绝望中寻找希望，人生终将辉煌</p>
-                    </div>
-                    <div class="col-xs-6 col-md-push-2 text-right">
-                        <p class="btn-apply">
-                            <a href="#" id="openLoginBtn" data-toggle="modal" data-target="#login-modal"
-                               data-backdrop="false">登录</a>
-                        </p>
-                        <p>
-                            <a href="#" id="displayName" style="display: none;"></a>
-                        </p>
-                        <p>
-                            <a href="index.html" id="logoutBtn" style="display: none;">退出</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="top-menu">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-2">
-                        <div id="colorlib-logo"><a href="index.html">中华学堂</a></div>
-                    </div>
-                    <div class="col-md-9 text-right menu-1">
-                        <ul>
-                            <li><a href="index.html">主页</a></li>
-                            <li class="has-dropdown active">
-                                <a href="courses.html">在线课程</a>
-                                <ul class="dropdown">
-                                    <li><a href="courses.html">全部</a></li>
-                                    <li><a href="courses.html">语文</a></li>
-                                    <li><a href="courses.html">数学</a></li>
-                                    <li><a href="courses.html">历史</a></li>
-                                    <li><a href="courses.html">地理</a></li>
-                                </ul>
-                            </li>
-                            <li class="has-dropdown">
-                                <a href="teachers.html">知名教师</a>
-                                <ul class="dropdown">
-                                    <li><a href="teachers.html">全部</a></li>
-                                    <li><a href="teachers.html">语文名师</a></li>
-                                    <li><a href="teachers.html">数学名师</a></li>
-                                    <li><a href="teachers.html">历史名师</a></li>
-                                    <li><a href="teachers.html">地理名师</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="about.html">关于我们</a></li>
-                            <li><a href="event.html">大事件</a></li>
-                            <li><a href="contact.html">联系方式</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <div id="navigation"></div>
     <aside id="colorlib-hero">
         <div class="flexslider">
             <ul class="slides">
@@ -418,7 +101,7 @@
                                         <!-- <label for="course">Category Course</label> -->
                                         <div class="form-field">
                                             <i class="icon icon-arrow-down3"></i>
-                                            <select name="people" id="people" class="form-control">
+                                            <select name="course" id="course" class="form-control">
                                                 <option value="#">课程</option>
                                                 <option value="#">语文</option>
                                                 <option value="#">数学</option>
@@ -433,7 +116,7 @@
                                         <!-- <label for="difficulty">Difficulty</label> -->
                                         <div class="form-field">
                                             <i class="icon icon-arrow-down3"></i>
-                                            <select name="people" id="people" class="form-control">
+                                            <select name="level" id="level" class="form-control">
                                                 <option value="#">级别</option>
                                                 <option value="#">初级</option>
                                                 <option value="#">中级</option>
@@ -685,105 +368,12 @@
 <script src="js/jquery.countTo.js"></script>
 <!-- Main -->
 <script src="js/main.js"></script>
-
+<!-- Load navigation section -->
 <script>
     $(document).ready(function () {
-        var displayName = window.localStorage.getItem("displayName");
-        if (displayName != null) {
-            $("#displayName").css({display: "block"});
-            $("#displayName").text(displayName);
-            $("#openLoginBtn").css({display: "none"});
-            $("#logoutBtn").css({display: "block"});
-            $('body').attr("style", "overflow:auto")
-        }
-
-        $("#loginForm").submit(function (e) {
-            e.preventDefault();
-        });
-
-        $("#loginBtn").click(function () {
-            var userName = $('#userName').val();
-            var password = $('#password').val();
-            $.ajax({
-                url: 'http://localhost:8080/identity/login/pwd/user',
-                contentType: "application/json; charset=utf-8",
-                type: 'POST',
-                crossDomain : true,
-                data: JSON.stringify({"email":userName,"password":password}),
-                datatype: 'json',
-                success: function (resp, status, xhr) {
-                    window.localStorage.setItem("email", resp.email);
-                    window.localStorage.setItem("displayName", resp.displayName);
-                    $('#login-modal').modal().hide();
-                    $("#displayName").css({display: "block"});
-                    $("#displayName").text(resp.displayName);
-                    $("#openLoginBtn").css({display: "none"});
-                    $("#logoutBtn").css({display: "block"});
-                    $('body').attr("style", "overflow:auto");
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    $(".login-info").css({display: "block"});
-                }
-            });
-        });
-
-        $("#logoutBtn").click(function () {
-            window.localStorage.removeItem("email");
-            window.localStorage.removeItem("displayName");
-            $("#displayName").css({display: "none"});
-            $("#displayName").text("");
-            $("#openLoginBtn").css({display: "block"});
-            $("#logoutBtn").css({display: "none"});
-        });
-
-        $("#openSignupBtn").click(function () {
-            $('#loginForm').trigger("reset");
-            $("#login-modal").css({display: "none"});
-        });
-
-        $("#signupBtn").click(function () {
-            var userName = $('#signup_email').val();
-            var password = $('#signup_password').val();
-            var lastName = $('#signup_lastName').val();
-            var firstName = $('#signup_firstName').val();
-            var displayName = $('#signup_displayName').val();
-            $.ajax({
-                url: 'http://localhost:8080/identity/signup/pwd/user',
-                contentType: "application/json; charset=utf-8",
-                type: 'POST',
-                crossDomain : true,
-                data: JSON.stringify({"email":userName,"password":password, "lastName":lastName, "firstName":firstName, "displayName":displayName}),
-                datatype: 'json',
-                success: function (resp, status, xhr) {
-                    window.localStorage.setItem("email", resp.email);
-                    window.localStorage.setItem("displayName", resp.displayName);
-                    $('#signup-modal').modal().hide();
-                    $("#displayName").css({display: "block"});
-                    $("#displayName").text(resp.displayName);
-                    $("#openLoginBtn").css({display: "none"});
-                    $("#logoutBtn").css({display: "block"});
-                    $('body').attr("style", "overflow:auto")
-                },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    $(".signup-info").css({display: "block"});
-                }
-            });
-        });
-
-        $("#signupForm").submit(function (e) {
-            e.preventDefault();
-        });
-
-        $("#login-modal .close").click(function () {
-            $('#loginForm').trigger("reset");
-        });
-
-        $("#signup-modal .close").click(function () {
-            $('#signupForm').trigger("reset");
-        });
+        $("#navigation").load("navigation.html");
     });
 </script>
-
 </body>
 </html>
 
