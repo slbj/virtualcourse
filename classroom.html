@@ -1,326 +1,224 @@
-<!-- Demo version: 2017.08.06 -->
-
-<!DOCTYPE html>
-<html lang="en">
-
+<!DOCTYPE HTML>
+<html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="msapplication-tap-highlight" content="no">
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>中华学堂</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="author" content=""/>
 
-    <link rel="stylesheet" href="https://cdn.webrtc-experiment.com/style.css">
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content=""/>
+    <meta property="og:image" content=""/>
+    <meta property="og:url" content=""/>
+    <meta property="og:site_name" content=""/>
+    <meta property="og:description" content=""/>
+    <meta name="twitter:title" content=""/>
+    <meta name="twitter:image" content=""/>
+    <meta name="twitter:url" content=""/>
+    <meta name="twitter:card" content=""/>
 
-    <title>Audio+Video+Screen Sharing using RTCMultiConnection</title>
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900" rel="stylesheet">
 
-    <meta name="description" content="Audio+Video+Screen Sharing using RTCMultiConnection" />
-    <meta name="keywords" content="WebRTC,RTCMultiConnection,Demos,Experiments,Samples,Examples" />
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="css/icomoon.css">
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="css/bootstrap.css">
 
-    <style>
-        * {
-            word-wrap:break-word;
-        }
-        video {
-            object-fit: fill;
-            width: 30%;
-        }
-        button,
-        input,
-        select {
-            font-weight: normal;
-            padding: 2px 4px;
-            text-decoration: none;
-            display: inline-block;
-            text-shadow: none;
-            font-size: 16px;
-            outline: none;
-        }
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
 
-        .make-center {
-            text-align: center;
-            padding: 5px 10px;
-        }
+    <!-- Flexslider  -->
+    <link rel="stylesheet" href="css/flexslider.css">
 
-        img, input, textarea {
-          max-width: 100%
-        }
+    <!-- Owl Carousel -->
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
 
-        @media all and (max-width: 500px) {
-            .fork-left, .fork-right, .github-stargazers {
-                display: none;
-            }
-        }
-    </style>
+    <!-- Flaticons  -->
+    <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Navigation style  -->
+    <link rel="stylesheet" href="css/navigation.css">
+
+    <!-- Modernizr JS -->
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
 </head>
-
 <body>
-    <article>
+<div class="colorlib-loader"></div>
 
-        <header style="text-align: center;">
-            <h1>Audio+Video+Screen Sharing using RTCMultiConnection</h1>
-            <p>
-                <a href="https://rtcmulticonnection.herokuapp.com/">HOME</a>
-                <span> &copy; </span>
-                <a href="http://www.MuazKhan.com/" target="_blank">Muaz Khan</a> .
-                <a href="http://twitter.com/WebRTCWeb" target="_blank" title="Twitter profile for WebRTC Experiments">@WebRTCWeb</a> .
-                <a href="https://github.com/muaz-khan?tab=repositories" target="_blank" title="Github Profile">Github</a> .
-                <a href="https://github.com/muaz-khan/RTCMultiConnection/issues?state=open" target="_blank">Latest issues</a> .
-                <a href="https://github.com/muaz-khan/RTCMultiConnection/commits/master" target="_blank">What's New?</a>
-            </p>
-        </header>
+<div id="page">
+    <div id="navigation"></div>
+    <aside id="colorlib-hero">
+        <div class="flexslider">
+            <ul class="slides">
+                <li style="background-color: cadetblue;">
+                    <div class="overlay"></div>
+                    <div class="container-fluid">
+                        <div class="row top-buffer">
+                            <div class="col-md-6 col-sm-12 col-md-offset-3 col-xs-12 slider-text">
+                                <div class="slider-text-inner text-center">
+                                    <h2>小学6年级数学 特级教师 宋老师</h2>
+                                    <div id="callPage" class="call-page">
+                                        <video id="remoteVideo" controls></video>
+                                        <video id="localVideo"></video>
+                                        <div class="row text-center">
+                                            <div class="col-md-12">
+                                                <input id="callToUsernameInput" type="text"
+                                                       placeholder="username to call"/>
+                                                <button id="callBtn" class="btn-success btn">Call</button>
+                                                <button id="hangUpBtn" class="btn-danger btn">Hang Up</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-        <div class="github-stargazers"></div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <footer id="colorlib-footer">
+        <div class="container">
+            <div class="row row-pb-md">
+                <div class="col-md-3 colorlib-widget">
+                    <h4>联系方式</h4>
+                    <ul class="colorlib-footer-links">
+                        <li>291 South 21th Street, <br> Suite 721 New York NY 10016</li>
+                        <li><a href="tel://1234567920"><i class="icon-phone"></i> + 1235 2355 98</a></li>
+                        <li><a href="mailto:info@yoursite.com"><i class="icon-envelope"></i> info@yoursite.com</a></li>
+                        <li><a href="http://luxehotel.com"><i class="icon-location4"></i> yourwebsite.com</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 colorlib-widget">
+                    <h4>Programs</h4>
+                    <p>
+                    <ul class="colorlib-footer-links">
+                        <li><a href="#"><i class="icon-check"></i> Diploma Degree</a></li>
+                        <li><a href="#"><i class="icon-check"></i> BS Degree</a></li>
+                        <li><a href="#"><i class="icon-check"></i> Beginner</a></li>
+                        <li><a href="#"><i class="icon-check"></i> Intermediate</a></li>
+                        <li><a href="#"><i class="icon-check"></i> Advance</a></li>
+                        <li><a href="#"><i class="icon-check"></i> Difficulty</a></li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="col-md-2 colorlib-widget">
+                    <h4>Useful Links</h4>
+                    <p>
+                    <ul class="colorlib-footer-links">
+                        <li><a href="#"><i class="icon-check"></i> About Us</a></li>
+                        <li><a href="#"><i class="icon-check"></i> Testimonials</a></li>
+                        <li><a href="#"><i class="icon-check"></i> Courses</a></li>
+                        <li><a href="#"><i class="icon-check"></i> Event</a></li>
+                        <li><a href="#"><i class="icon-check"></i> News</a></li>
+                        <li><a href="#"><i class="icon-check"></i> Contact</a></li>
+                    </ul>
+                    </p>
+                </div>
 
-        <section class="experiment">
-            <div class="make-center">
-                <input type="text" id="room-id" value="abcdef" autocorrect=off autocapitalize=off size=20>
-                <button id="open-room">Open Room</button>
-                <button id="join-room">Join Room</button>
-                <button id="open-or-join-room">Auto Open Or Join Room</button>
+                <div class="col-md-2 colorlib-widget">
+                    <h4>Support</h4>
+                    <p>
+                    <ul class="colorlib-footer-links">
+                        <li><a href="#"><i class="icon-check"></i> Documentation</a></li>
+                        <li><a href="#"><i class="icon-check"></i> Forums</a></li>
+                        <li><a href="#"><i class="icon-check"></i> Help &amp; Support</a></li>
+                        <li><a href="#"><i class="icon-check"></i> Scholarship</a></li>
+                        <li><a href="#"><i class="icon-check"></i> Student Transport</a></li>
+                        <li><a href="#"><i class="icon-check"></i> Release Status</a></li>
+                    </ul>
+                    </p>
+                </div>
 
-                <hr>
-                    <button id="share-screen" disabled>Share Screen</button>
-                <hr>
-
-                <div id="room-urls" style="text-align: center;display: none;background: #F1EDED;margin: 15px -10px;border: 1px solid rgb(189, 189, 189);border-left: 0;border-right: 0;"></div>
+                <div class="col-md-3 colorlib-widget">
+                    <h4>Recent Post</h4>
+                    <div class="f-blog">
+                        <a href="blog.html" class="blog-img" style="background-image: url(images/blog-1.jpg);">
+                        </a>
+                        <div class="desc">
+                            <h2><a href="blog.html">Creating Mobile Apps</a></h2>
+                            <p class="admin"><span>18 April 2018</span></p>
+                        </div>
+                    </div>
+                    <div class="f-blog">
+                        <a href="blog.html" class="blog-img" style="background-image: url(images/blog-2.jpg);">
+                        </a>
+                        <div class="desc">
+                            <h2><a href="blog.html">Creating Mobile Apps</a></h2>
+                            <p class="admin"><span>18 April 2018</span></p>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div id="videos-container"></div>
-        </section>
-
-        <blockquote>
-            You can share audio+video as well as screen.
-        </blockquote>
-
-        <script src="/dist/RTCMultiConnection.min.js"></script>
-
-        <!-- custom layout for HTML5 audio/video elements -->
-        <script src="https://cdn.webrtc-experiment.com/getMediaElement.js"></script>
-
-        <!-- socket.io for signaling -->
-        <script src="/socket.io/socket.io.js"></script>
-
-        <!-- capture screen from any HTTPs domain! -->
-        <script src="/node_modules/webrtc-screen-capturing/getScreenId.js"></script>
-
-        <script>
-            // ......................................................
-            // .......................UI Code........................
-            // ......................................................
-
-            document.getElementById('share-screen').onclick = function() {
-                this.disabled = true;
-                connection.addStream({
-                    screen: true,
-                    oneway: true
-                });
-            };
-
-            document.getElementById('open-room').onclick = function() {
-                disableInputButtons();
-                connection.open(document.getElementById('room-id').value, function() {
-                    showRoomURL(connection.sessionid);
-                });
-            };
-
-            document.getElementById('join-room').onclick = function() {
-                disableInputButtons();
-                connection.join(document.getElementById('room-id').value);
-            };
-
-            document.getElementById('open-or-join-room').onclick = function() {
-                disableInputButtons();
-                connection.openOrJoin(document.getElementById('room-id').value, function(isRoomExists, roomid) {
-                    if(!isRoomExists) {
-                        showRoomURL(roomid);
-                    }
-                });
-            };
-
-            // ......................................................
-            // ..................RTCMultiConnection Code.............
-            // ......................................................
-
-            var connection = new RTCMultiConnection();
-
-            // Using getScreenId.js to capture screen from any domain
-            // You do NOT need to deploy Chrome Extension YOUR-Self!!
-            connection.getScreenConstraints = function(callback) {
-                getScreenConstraints(function(error, screen_constraints) {
-                    if (!error) {
-                        screen_constraints = connection.modifyScreenConstraints(screen_constraints);
-                        callback(error, screen_constraints);
-                        return;
-                    }
-                    throw error;
-                });
-            };
-
-            // by default, socket.io server is assumed to be deployed on your own URL
-            connection.socketURL = '/';
-
-            // comment-out below line if you do not have your own socket.io server
-            // connection.socketURL = 'https://rtcmulticonnection.herokuapp.com:443/';
-
-            connection.socketMessageEvent = 'audio-video-screen-demo';
-
-            connection.session = {
-                audio: true,
-                video: true
-            };
-
-            connection.sdpConstraints.mandatory = {
-                OfferToReceiveAudio: true,
-                OfferToReceiveVideo: true
-            };
-
-            connection.videosContainer = document.getElementById('videos-container');
-            connection.onstream = function(event) {
-                if(document.getElementById(event.streamid)) {
-                    var existing = document.getElementById(event.streamid);
-                    existing.parentNode.removeChild(existing);
-                }
-
-                var width = parseInt(connection.videosContainer.clientWidth / 2) - 20;
-
-                if(event.stream.isScreen === true) {
-                    width = connection.videosContainer.clientWidth - 20;
-                }
-
-                var mediaElement = getMediaElement(event.mediaElement, {
-                    title: event.userid,
-                    buttons: ['full-screen'],
-                    width: width,
-                    showOnMouseEnter: false
-                });
-
-                connection.videosContainer.appendChild(mediaElement);
-
-                setTimeout(function() {
-                    mediaElement.media.play();
-                }, 5000);
-
-                mediaElement.id = event.streamid;
-            };
-
-            connection.onstreamended = function(event) {
-                var mediaElement = document.getElementById(event.streamid);
-                if(mediaElement) {
-                    mediaElement.parentNode.removeChild(mediaElement);
-                }
-            };
-
-            function disableInputButtons() {
-                document.getElementById('open-or-join-room').disabled = true;
-                document.getElementById('open-room').disabled = true;
-                document.getElementById('join-room').disabled = true;
-                document.getElementById('room-id').disabled = true;
-                document.getElementById('share-screen').disabled = false;
-            }
-
-            // ......................................................
-            // ......................Handling Room-ID................
-            // ......................................................
-
-            function showRoomURL(roomid) {
-                var roomHashURL = '#' + roomid;
-                var roomQueryStringURL = '?roomid=' + roomid;
-
-                var html = '<h2>Unique URL for your room:</h2><br>';
-
-                html += 'Hash URL: <a href="' + roomHashURL + '" target="_blank">' + roomHashURL + '</a>';
-                html += '<br>';
-                html += 'QueryString URL: <a href="' + roomQueryStringURL + '" target="_blank">' + roomQueryStringURL + '</a>';
-
-                var roomURLsDiv = document.getElementById('room-urls');
-                roomURLsDiv.innerHTML = html;
-
-                roomURLsDiv.style.display = 'block';
-            }
-
-            (function() {
-                var params = {},
-                    r = /([^&=]+)=?([^&]*)/g;
-
-                function d(s) {
-                    return decodeURIComponent(s.replace(/\+/g, ' '));
-                }
-                var match, search = window.location.search;
-                while (match = r.exec(search.substring(1)))
-                    params[d(match[1])] = d(match[2]);
-                window.params = params;
-            })();
-
-            var roomid = '';
-            if (localStorage.getItem(connection.socketMessageEvent)) {
-                roomid = localStorage.getItem(connection.socketMessageEvent);
-            } else {
-                roomid = connection.token();
-            }
-            document.getElementById('room-id').value = roomid;
-            document.getElementById('room-id').onkeyup = function() {
-                localStorage.setItem(connection.socketMessageEvent, this.value);
-            };
-
-            var hashString = location.hash.replace('#', '');
-            if(hashString.length && hashString.indexOf('comment-') == 0) {
-              hashString = '';
-            }
-
-            var roomid = params.roomid;
-            if(!roomid && hashString.length) {
-                roomid = hashString;
-            }
-
-            if(roomid && roomid.length) {
-                document.getElementById('room-id').value = roomid;
-                localStorage.setItem(connection.socketMessageEvent, roomid);
-
-                // auto-join-room
-                (function reCheckRoomPresence() {
-                    connection.checkPresence(roomid, function(isRoomExists) {
-                        if(isRoomExists) {
-                            connection.join(roomid);
-                            return;
-                        }
-
-                        setTimeout(reCheckRoomPresence, 5000);
-                    });
-                })();
-
-                disableInputButtons();
-            }
-        </script>
-
-        <section class="experiment own-widgets latest-commits">
-            <h2 class="header" id="updates" style="color: red;padding-bottom: .1em;"><a href="https://github.com/muaz-khan/RTCMultiConnection/commits/master">Latest Updates</a></h2>
-            <div id="github-commits"></div>
-        </section>
-
-        <section class="experiment own-widgets">
-            <h2 class="header" id="updates" style="color: red;padding-bottom: .1em;"><a href="https://github.com/muaz-khan/RTCMultiConnection/issues">Latest Issues</a></h2>
-            <div id="github-issues"></div>
-        </section>
-
-        <section class="experiment">
-            <h2 class="header" id="feedback">Feedback</h2>
-            <div>
-                <textarea id="message" style="height: 8em; margin: .2em; width: 98%; border: 1px solid rgb(189, 189, 189); outline: none; resize: vertical;" placeholder="Have any message? Suggestions or something went wrong?"></textarea>
+        </div>
+        <div class="copy">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p>
+                            <small class="block">&copy;
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                                Copyright &copy;<script>document.write(new Date().getFullYear());</script>
+                                All rights reserved | This template is made with <i class="icon-heart"
+                                                                                    aria-hidden="true"></i> by <a
+                                        href="https://colorlib.com" target="_blank">Colorlib</a>
+                                <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            </small>
+                            <br>
+                            <small class="block">Demo Images: <a href="http://unsplash.co/" target="_blank">Unsplash</a>,
+                                <a href="http://pexels.com/" target="_blank">Pexels</a></small>
+                        </p>
+                    </div>
+                </div>
             </div>
-            <button id="send-message" style="font-size: 1em;">Send Message</button><small style="margin-left:1em;">Enter your email too; if you want "direct" reply!</small>
-        </section>
+        </div>
+    </footer>
+</div>
 
+<div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
+</div>
 
-        <script>
-            window.useThisGithubPath = 'muaz-khan/RTCMultiConnection';
-        </script>
-        <script src="https://cdn.webrtc-experiment.com/commits.js" async></script>
-
-    </article>
-
-
-
+<!-- jQuery -->
+<script src="js/jquery.min.js"></script>
+<!-- jQuery Easing -->
+<script src="js/jquery.easing.1.3.js"></script>
+<!-- Bootstrap -->
+<script src="js/bootstrap.min.js"></script>
+<!-- Waypoints -->
+<script src="js/jquery.waypoints.min.js"></script>
+<!-- Stellar Parallax -->
+<script src="js/jquery.stellar.min.js"></script>
+<!-- Flexslider -->
+<script src="js/jquery.flexslider-min.js"></script>
+<!-- Owl carousel -->
+<script src="js/owl.carousel.min.js"></script>
+<!-- Magnific Popup -->
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/magnific-popup-options.js"></script>
+<!-- Counters -->
+<script src="js/jquery.countTo.js"></script>
+<!-- Main -->
+<script src="js/main.js"></script>
+<!-- Load navigation section -->
+<script>
+    $(document).ready(function () {
+        $("#navigation").load("navigation.html");
+    });
+</script>
 </body>
-
 </html>
