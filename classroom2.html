@@ -367,7 +367,8 @@
     </script>
 </body>
 
-</html><!DOCTYPE HTML>
+</html>
+<!DOCTYPE HTML>
 <html>
 
 <head>
@@ -503,19 +504,17 @@
                                             <video id="remoteVideo" autoplay playsinline></video>
                                             <video id="localVideo" autoplay playsinline></video>
 
-                                            <section class="experiment">
-                                                <div class="row text-center">
-                                                    <div class="col-md-12">
-                                                        <input type="text" id="room-id" value="abcdef" autocorrect=off autocapitalize=off size=20>
-                                                        <button id="open-room">Open Room</button>
-                                                        <button id="join-room">Join Room</button>
-                                                        <button id="open-or-join-room">Auto Open Or Join Room</button>
-                                                    </div>
+                                            <section class="make-center">
+                                                <div>
+                                                    <input type="text" id="room-id" value="abcdef" autocorrect=off autocapitalize=off size=20>
+                                                    <button id="open-room">Open Room</button>
+                                                    <button id="join-room">Join Room</button>
+                                                    <button id="open-or-join-room">Auto Open Or Join Room</button>
                                                 </div>
-                                                <!-- list of all available conferencing rooms -->
-                                                <table style="width: 100%;" id="rooms-list"></table>
-                                                <!-- local/remote videos container -->
-                                                <div id="videos-container"></div>
+
+                                                <div id="videos-container" style="margin: 20px 0;"></div>
+
+                                                <div id="room-urls" style="text-align: center;display: none;background: #F1EDED;margin: 15px -10px;border: 1px solid rgb(189, 189, 189);border-left: 0;border-right: 0;"></div>
                                             </section>
 
                                         </div>
