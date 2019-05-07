@@ -55,13 +55,13 @@
     <script src="js/respond.min.js"></script>
     <![endif]-->
 </head>
-<body>
+<body id="mainbody">
 <div class="colorlib-loader"></div>
-
+<div id="abc"></div>
 <div id="page">
     <div id="navigation"></div>
     <aside id="colorlib-hero">
-        <div class="flexslider">
+        <div id="tempArea" class="flexslider">
             <ul class="slides">
                 <li style="background-image: url(images/img_bg_2.jpg);">
                     <div class="overlay"></div>
@@ -69,7 +69,7 @@
                         <div class="row">
                             <div class="col-md-6 col-sm-12 col-md-offset-3 col-xs-12 slider-text">
                                 <div class="slider-text-inner text-center">
-                                    <h1>在线课程</h1>
+                                    <h1 id="title">在线课程</h1>
                                     <h2 class="breadcrumbs"><span><a href="index.html">主页</a></span> | <span>课程</span>
                                     </h2>
                                 </div>
@@ -145,99 +145,185 @@
                     <h2>在 线 课 程</h2>
                 </div>
             </div>
+            <div class="row" id="course-catalog">
+            </div>
+        </div>
+    </div>
+    <div id="footer"></div>
+</div>
+
+<div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
+</div>
+
+<!-- jQuery -->
+<script src="js/jquery.min.js"></script>
+<!-- jQuery Easing -->
+<script src="js/jquery.easing.1.3.js"></script>
+<!-- Bootstrap -->
+<script src="js/bootstrap.min.js"></script>
+<!-- Waypoints -->
+<script src="js/jquery.waypoints.min.js"></script>
+<!-- Stellar Parallax -->
+<script src="js/jquery.stellar.min.js"></script>
+<!-- Flexslider -->
+<script src="js/jquery.flexslider-min.js"></script>
+<!-- Owl carousel -->
+<script src="js/owl.carousel.min.js"></script>
+<!-- Magnific Popup -->
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/magnific-popup-options.js"></script>
+<!-- Counters -->
+<script src="js/jquery.countTo.js"></script>
+<!-- Main -->
+<script src="js/main.js"></script>
+<!-- Sammy -->
+<script src="js/sammy/sammy.js"></script>
+<!-- Course -->
+<script src="js/course.js"></script>
+<!-- Load navigation section -->
+<script>
+    $(document).ready(function () {
+        $("#navigation").load("navigation.html");
+        $("#footer").load("footer.html");
+    });
+</script>
+
+<script src="js/sammy/plugins/sammy.template.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/sammy/plugins/sammy.json.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/sammy/plugins/sammy.storage.js" type="text/javascript" charset="utf-8"></script>
+
+
+
+<div id="newPage" style="display:none">
+    <div id="navigation"></div>
+    <aside id="colorlib-hero">
+        <div class="flexslider">
+            <ul class="slides">
+                <li style="background-image: url(images/img_bg_2.jpg);">
+                    <div class="overlay"></div>
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12 col-md-offset-3 col-xs-12 slider-text">
+                                <div class="slider-text-inner text-center">
+                                    <h1 id="courseName"></h1>
+                                    <h2 class="breadcrumbs"><span><a href="index.html">主页</a></span> | <span>课程</span>
+                                    </h2>
+                                    <a href="classroom.html">
+                                        <button type="button" class="btn btn-primary">开 始 上 课</button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </aside>
+
+    <div id="colorlib-counter" class="colorlib-counters">
+        <div class="container">
             <div class="row">
-                <div class="col-md-4 animate-box">
-                    <div class="classes">
-                        <div class="classes-img" style="background-image: url(images/classes-1.jpg);">
+                <div class="col-md-7">
+                    <div class="about-desc">
+                        <div class="about-img-1 animate-box"
+                             style="background-image: url(images/about-img-2.jpg);"></div>
+                        <!--<div class="about-img-2 animate-box" style="background-image: url(images/about-img-1.jpg);"></div>-->
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="row">
+                        <div class="col-md-12 colorlib-heading animate-box">
+                            <h1 class="heading-big">老师介绍</h1>
+                            <h2>老师介绍</h2>
                         </div>
-                        <div class="wrap">
-                            <div class="desc">
-                                <span class="teacher">特级教师 宋老师</span>
-                                <h3><a href="course1.html">小学一年级语文（人教版）</a></h3>
-                            </div>
-                            <div class="pricing">
-                                <p><span class="price">¥2000</span> <span class="price old-price">¥3500</span> <span
-                                        class="more"><a href="#"><i class="icon-link"></i></a></span></p>
-                            </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 animate-box">
+                            <p id="teacher"><strong></strong></p>
+                            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost
+                                unorthographic life One day however a small line of blind text by the name of Lorem
+                                Ipsum decided to leave for the far World of Grammar.</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 animate-box">
-                    <div class="classes">
-                        <div class="classes-img" style="background-image: url(images/classes-2.jpg);">
-                        </div>
-                        <div class="wrap">
-                            <div class="desc">
-                                <span class="teacher">特级教师 宋老师</span>
-                                <h3><a href="course1.html">小学六年级数学 （北师大版）</a></h3>
-                            </div>
-                            <div class="pricing">
-                                <p><span class="price">¥2000</span> <span class="price old-price">¥3500</span> <span
-                                        class="more"><a href="#"><i class="icon-link"></i></a></span></p>
-                            </div>
-                        </div>
-                    </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="colorlib-about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>课程介绍</h3>
+                    <p id="courseDescription"></p>
                 </div>
-                <div class="col-md-4 animate-box">
-                    <div class="classes">
-                        <div class="classes-img" style="background-image: url(images/classes-3.jpg);">
-                        </div>
-                        <div class="wrap">
-                            <div class="desc">
-                                <span class="teacher">特级教师 王老师</span>
-                                <h3><a href="course1.html">中国历史讲解 古代史 少年班</a></h3>
+                <div class="col-md-6">
+                    <div class="fancy-collapse-panel">
+                        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingOne">
+                                    <h4 class="panel-title">
+                                        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne"
+                                           aria-expanded="true" aria-controls="collapseOne">教学目标
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel"
+                                     aria-labelledby="headingOne">
+                                    <div class="panel-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <p>Far far away, behind the word mountains, far from the countries
+                                                    Vokalia and Consonantia, there live the blind texts. </p>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <p>Separated they live in Bookmarksgrove right at the coast of the
+                                                    Semantics, a large language ocean.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="pricing">
-                                <p><span class="price">¥2000</span> <span class="price old-price">¥3500</span> <span
-                                        class="more"><a href="#"><i class="icon-link"></i></a></span></p>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingTwo">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
+                                           href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">教学安排
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                                     aria-labelledby="headingTwo">
+                                    <div class="panel-body">
+                                        <p>Far far away, behind the word <strong>mountains</strong>, far from the
+                                            countries Vokalia and Consonantia, there live the blind texts. Separated
+                                            they live in Bookmarksgrove right at the coast of the Semantics, a large
+                                            language ocean.</p>
+                                        <ul>
+                                            <li>Separated they live in Bookmarksgrove right</li>
+                                            <li>Separated they live in Bookmarksgrove right</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 animate-box">
-                    <div class="classes">
-                        <div class="classes-img" style="background-image: url(images/classes-4.jpg);">
-                        </div>
-                        <div class="wrap">
-                            <div class="desc">
-                                <span class="teacher">特级教师 张老师</span>
-                                <h3><a href="course1.html">中国地理 北京 少年班</a></h3>
-                            </div>
-                            <div class="pricing">
-                                <p><span class="price">¥1500</span> <span class="price old-price">¥3000</span> <span
-                                        class="more"><a href="#"><i class="icon-link"></i></a></span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 animate-box">
-                    <div class="classes">
-                        <div class="classes-img" style="background-image: url(images/classes-5.jpg);">
-                        </div>
-                        <div class="wrap">
-                            <div class="desc">
-                                <span class="teacher">特级教师 宋老师</span>
-                                <h3><a href="course1.html">小学三年级语文（人教版）</a></h3>
-                            </div>
-                            <div class="pricing">
-                                <p><span class="price">¥2000</span> <span class="price old-price">¥3500</span> <span
-                                        class="more"><a href="#"><i class="icon-link"></i></a></span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 animate-box">
-                    <div class="classes">
-                        <div class="classes-img" style="background-image: url(images/classes-6.jpg);">
-                        </div>
-                        <div class="wrap">
-                            <div class="desc">
-                                <span class="teacher">特级教师 李老师</span>
-                                <h3><a href="course1.html">小学四年级数学 （北师大版）</a></h3>
-                            </div>
-                            <div class="pricing">
-                                <p><span class="price">¥2000</span> <span class="price old-price">¥3500</span> <span
-                                        class="more"><a href="#"><i class="icon-link"></i></a></span></p>
+                            <div class="panel panel-default">
+                                <div class="panel-heading" role="tab" id="headingThree">
+                                    <h4 class="panel-title">
+                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion"
+                                           href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">学习资料
+                                        </a>
+                                    </h4>
+                                </div>
+                                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+                                     aria-labelledby="headingThree">
+                                    <div class="panel-body">
+                                        <p>Far far away, behind the word <strong>mountains</strong>, far from the
+                                            countries Vokalia and Consonantia, there live the blind texts. Separated
+                                            they live in Bookmarksgrove right at the coast of the Semantics, a large
+                                            language ocean.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -343,37 +429,6 @@
     </footer>
 </div>
 
-<div class="gototop js-top">
-    <a href="#" class="js-gotop"><i class="icon-arrow-up2"></i></a>
-</div>
-
-<!-- jQuery -->
-<script src="js/jquery.min.js"></script>
-<!-- jQuery Easing -->
-<script src="js/jquery.easing.1.3.js"></script>
-<!-- Bootstrap -->
-<script src="js/bootstrap.min.js"></script>
-<!-- Waypoints -->
-<script src="js/jquery.waypoints.min.js"></script>
-<!-- Stellar Parallax -->
-<script src="js/jquery.stellar.min.js"></script>
-<!-- Flexslider -->
-<script src="js/jquery.flexslider-min.js"></script>
-<!-- Owl carousel -->
-<script src="js/owl.carousel.min.js"></script>
-<!-- Magnific Popup -->
-<script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/magnific-popup-options.js"></script>
-<!-- Counters -->
-<script src="js/jquery.countTo.js"></script>
-<!-- Main -->
-<script src="js/main.js"></script>
-<!-- Load navigation section -->
-<script>
-    $(document).ready(function () {
-        $("#navigation").load("navigation.html");
-    });
-</script>
 </body>
 </html>
 
